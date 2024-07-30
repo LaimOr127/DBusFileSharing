@@ -14,7 +14,7 @@
 constexpr char LIST_SEP = ',';
 
 bool checkExtensionCompatibility(const ipc::EndpointInfo &info, const std::string &filepath) {
-    // TODO: add handling files with no extension
+    // TODO: добавить обработку файлов без расширения
     const std::string actualFmt = filepath.substr(filepath.rfind('.'));
     return std::find(info.acceptedFormats->cbegin(), info.acceptedFormats->cend(), actualFmt) != info.acceptedFormats->cend();
 }
@@ -62,7 +62,7 @@ void ipc::SharingService::readConfig(const std::string &configPath) {
         ::sprintf(errMsg, "File sharing proxy service could not open file %s: no such file or directory.", configPath.c_str());
         ::sd_journal_print(LOG_CRIT, errMsg);
         std::cerr << errMsg << '\n';
-        throw std::runtime_error("errMsg"); // indirect call of std::terminate()
+        throw std::runtime_error("errMsg"); // косвенный вызов std::terminate()
     }
     std::string line;
     std::string appName = "";
