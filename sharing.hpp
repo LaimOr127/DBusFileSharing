@@ -40,11 +40,11 @@ namespace ipc {
 }
 
 /*
- * SharingService is a systemd service launched on startup
- * helping other applications to get information about
- * applications providing file sharing.
- * It should somehow get information about executables which
- * are responsible for handling files (how to call them, which
- * filetypes they support, etc.) and send data to this applications.
- * It should contain list of those executables.
+ * SharingService - это системный сервис, запускаемый при запуске
+ * помогающий другим приложениям получать информацию о
+ * приложениях, предоставляющих общий доступ к файлам.
+ * Он должен каким-то образом получать информацию об исполняемых файлах, которые
+ * отвечают за обработку файлов (как их вызывать, какие
+ * типы файлов, которые они поддерживают, и т.д.) и отправляют данные в эти приложения.
+ * Оно должно содержать список этих исполняемых файлов.
  */
